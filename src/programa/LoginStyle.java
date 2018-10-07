@@ -144,8 +144,8 @@ public class LoginStyle extends JFrame {
 		
 		panel.addMouseMotionListener(new MouseMotionAdapter() {
 		      public void mouseDragged(MouseEvent e) {
-		        Point p = getContentPane().getLocation();
-		        getContentPane().setLocation(p.x + e.getX() - point.x, p.y + e.getY() - point.y);
+		        Point p = getLocation();
+		        setLocation(p.x + e.getX() - point.x, p.y + e.getY() - point.y);
 		      }
 		    });
 
