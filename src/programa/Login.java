@@ -1,10 +1,14 @@
 package programa;
 	
 import java.awt.Color;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +16,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+
+import sun.awt.AWTAccessor.MouseEventAccessor;
 
 @SuppressWarnings("serial")
 public class Login extends LoginStyle{
@@ -24,6 +31,7 @@ public class Login extends LoginStyle{
 		logar.addKeyListener(new CampoLogar());
 		login.addKeyListener(new CampoLogar());
 		senha.addKeyListener(new CampoLogar());
+		button.addActionListener(new BotaoSair());
 	}
 
 	/************************************************
@@ -123,6 +131,19 @@ public class Login extends LoginStyle{
 			}
 		}
 	}	
+	
+	/*=====[Botões do Painel Superior]=====*/
+	class BotaoSair implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			System.exit(0);
+			
+		}		
+		
+	}	
+	
 	
 	public static void main(String arg[]){ 
 		new Login().setVisible(true);
