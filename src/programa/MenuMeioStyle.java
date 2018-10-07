@@ -1,6 +1,8 @@
 package programa;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -45,6 +47,17 @@ public class MenuMeioStyle extends Botoes {
 		novoCliente.setToolTipText("Novo Cliente");
 		novoCliente.setBounds(178, 11, 150, 100);
 		novoCliente.setBackground(new Color(189, 30, 73));
+		
+//		novoCliente.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				
+//				ClientesCadastro cli = new ClientesCadastro();
+//				cli.setVisible(true);
+//				
+//			}
+//		});
 
 		Icon imageProduto = new ImageIcon("../ProgramaCadastro/imagens/PRODUTO.PNG");
 		novoProduto = new JButton(imageProduto);

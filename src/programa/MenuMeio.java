@@ -38,11 +38,19 @@ public class MenuMeio extends MenuMeioStyle{
 			JOptionPane.showMessageDialog(null, s);*/
 		
 			ClientesCadastro cli = new ClientesCadastro();
-			tudo.remove(fundo);
-			tudo.add(fundo);
-			fundo.add(cli.cliente);
-		}		
+			cli.setVisible(true);
+//			tudo.remove(fundo);
+//			tudo.add(fundo);
+//			fundo.add(cli.cliente);
+//			novoCliente.addActionListener(new BotaoNovoCliente());
+			
+		}
+		
 	}
+	
+	
+	
+	
 	
 	class BotaoNovoProduto implements ActionListener{
 
