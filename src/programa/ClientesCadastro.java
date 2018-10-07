@@ -13,7 +13,7 @@ import construtores.ClientesConstrutor;
 
 public class ClientesCadastro extends ClientesCadastroStyle{
 	
-	String url = "jdbc:mysql://localhost:3306/programa_cadastro";
+	String url = "jdbc:mysql://localhost:3306/programa_cadastro?user=root&useTimezone=true&serverTimezone=UTC";
 	
 	protected String Tnome, Tendereco, Testado, Tbairro, Tcidade, Tcep, Tcpf, TdataNascim, Ttel;
 
@@ -33,7 +33,7 @@ public class ClientesCadastro extends ClientesCadastroStyle{
 		String sql = "insert into cliente (nome, endereco, Cidade, bairro, Estado, cep, telefone , cpf, dataNascimento) values (?,?,?,?,?,?,?,?,?)";
 		
 		try(
-			Connection conexao = DriverManager.getConnection(url, "root", "root");
+			Connection conexao = DriverManager.getConnection(url, "root", "");//""
 			PreparedStatement stm = conexao.prepareStatement(sql);
 		){
 			
