@@ -1,9 +1,27 @@
 package programa;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
 public class MenuLista extends MenuListaStyle{
 	
 	public MenuLista(){
 		
+		menuItemClientes.addActionListener(new BotaoCadastrarCliente());
+		
+		
+	}
+	
+	class BotaoCadastrarCliente implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			ClientesCadastro cli = new ClientesCadastro();
+			cli.setVisible(true);
+			
+		}
 		
 	}
 	

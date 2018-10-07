@@ -21,6 +21,7 @@ public class MenuListaStyle extends JFrame{
 	JPanel fundo    = new JPanel();      				  // Envolve TODA a parte de conteudo, ou seja abaixo dos botoes!!
 	JPanel central;
 	CardLayout gerenciadorDeConteudo;
+	JMenuItem menuItemClientes;
 
 	Toolkit toolkit = Toolkit.getDefaultToolkit();        //Pegando as dimensões da tela
 	final Dimension scrnsize = toolkit.getScreenSize();  
@@ -84,7 +85,8 @@ public class MenuListaStyle extends JFrame{
 
 		//Itens do menu
 
-		JMenuItem menuItemClientes = new JMenuItem("Clientes");
+		
+		menuItemClientes = new JMenuItem("Clientes");
 		JMenuItem menuItemFuncionários = new JMenuItem("Funcionários");
 		JMenuItem menuItemFornecedor = new JMenuItem("Fornecedor");
 		JMenuItem menuItemProduto = new JMenuItem("Produto");
