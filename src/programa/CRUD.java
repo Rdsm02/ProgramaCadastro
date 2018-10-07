@@ -10,15 +10,19 @@ import java.sql.ResultSetMetaData;
 @SuppressWarnings("serial")
 public class CRUD extends MenuLista{
 	
-	String url = "jdbc:mysql://localhost:3306/programa_cadastro";
+	
+	
+	String url = "jdbc:mysql://localhost:3306/programa_cadastro?user=root&useTimezone=true&serverTimezone=UTC";
 	
 	public String[][] Ler(String tabela){
+//		System.out.println("cheguei ");
 		
 		String sql = "SELECT * FROM "+tabela;
 		
+		
 		String [][] array;
 		try(	
-			Connection conexao = DriverManager.getConnection(url, "root", "root");
+			Connection conexao = DriverManager.getConnection(url, "root", null);
 			PreparedStatement stm = conexao.prepareStatement(sql);
 			ResultSet rs = stm.executeQuery()
 		){
@@ -40,7 +44,7 @@ public class CRUD extends MenuLista{
 	 	 	
 		}catch(Exception e){                              // APAGAR NA VERSÃO FINAL
 	
-			System.out.println(e);
+			System.out.println("cheguei " + e);
 			return null;
 		}
 		return array;

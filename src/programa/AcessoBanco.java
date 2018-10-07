@@ -13,7 +13,9 @@ public class AcessoBanco {
 	static String url = "jdbc:mysql://localhost:3306/programa_cadastro";
 
 	
-	public AcessoBanco(){		
+	public AcessoBanco() throws ClassNotFoundException{	
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		
 		String sql = "insert into login (login, senha) values ('ehheheheeheh!', 'ohohohohohohoh!')";
 		
