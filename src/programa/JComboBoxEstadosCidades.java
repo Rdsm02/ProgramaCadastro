@@ -16,7 +16,7 @@ public class JComboBoxEstadosCidades extends JFrame{
 	       try {
 	           
 	            String usuario ="root";
-	            String senha  = "root";
+	            String senha  = "";
 	            String url = "jdbc:mysql://localhost:3306/programa_cadastro";
 	            
 	            //conexao com o banco de dados
@@ -45,7 +45,7 @@ public class JComboBoxEstadosCidades extends JFrame{
 	       try {
 	           
 	            String usuario ="root";
-	            String senha  = "root";
+	            String senha  = "";
 	            String url = "jdbc:mysql://localhost:3306/programa_cadastro";
 	            
 	            //conexao com o banco de dados
