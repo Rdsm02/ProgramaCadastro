@@ -21,7 +21,7 @@ public class MenuListaStyle extends JFrame{
 	JPanel fundo    = new JPanel();      				  // Envolve TODA a parte de conteudo, ou seja abaixo dos botoes!!
 	JPanel central;
 	CardLayout gerenciadorDeConteudo;
-	JMenuItem menuItemClientes;
+	JMenuItem menuItemClientes, menuItemEstado;
 
 	Toolkit toolkit = Toolkit.getDefaultToolkit();        //Pegando as dimensões da tela
 	final Dimension scrnsize = toolkit.getScreenSize();  
@@ -36,7 +36,7 @@ public class MenuListaStyle extends JFrame{
 
 		setTitle("Programa de Cadastro de Produtos, Funcionarios e Clientes");
 		setBounds(0, 0, width, heigth);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		setUndecorated(false);                                         // com false abre frame dentro de um frame
 
 
@@ -90,10 +90,13 @@ public class MenuListaStyle extends JFrame{
 		JMenuItem menuItemFuncionários = new JMenuItem("Funcionários");
 		JMenuItem menuItemFornecedor = new JMenuItem("Fornecedor");
 		JMenuItem menuItemProduto = new JMenuItem("Produto");
-
+		menuItemEstado = new JMenuItem("Estado");
+		JMenuItem menuItemCidade = new JMenuItem("Cidade");
+		
 		JMenuItem menuItemVendas = new JMenuItem("Vendas");
 		JMenuItem menuItemCompras = new JMenuItem("Compras");
 		JMenuItem menuItemEstoque = new JMenuItem("Estoque");
+		
 
 		JMenuItem menuItemConsultaClientes = new JMenuItem("Clientes");
 		JMenuItem menuItemConsultaFuncionários = new JMenuItem("Funcionários");
@@ -144,6 +147,13 @@ public class MenuListaStyle extends JFrame{
 
 		menuBar.add(menuArquivo);
 		menuBar.add(menuCadastro);
+		
+		
+		
+		menuCadastro.add(menuItemEstado);
+		
+		
+		menuCadastro.add(menuItemCidade);
 		menuBar.add(menuRelatório);
 		menuBar.add(menuConsulta);
 		this.setJMenuBar(menuBar);      //atribui um JMenuBar para o frame

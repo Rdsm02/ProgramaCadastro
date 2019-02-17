@@ -4,13 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-public class JComboBoxEstadosCidades extends JFrame{
+//public class JComboBoxEstadosCidades extends JFrame{
+	
+public class JComboBoxEstadosCidades extends JComboBoxEstadosCidadesStyle{
 	
 	JComboBox<String> estados,cidades;
+	
+	String url = "jdbc:mysql://localhost:3306/programa_cadastro?user=root&useTimezone=true&serverTimezone=UTC";
 	
 	public void   ListarEstados (){
 	       try {
@@ -70,8 +76,28 @@ public class JComboBoxEstadosCidades extends JFrame{
 	           e.printStackTrace();
 	       }
 	 }
+	 
+	 
+	 public void CadastrarEstado (int codEstado, String nomeEstado) {
+		 
+		 String sql = "insert into tb_estados (cod_Estado, Estado) values (?,?)";
+		 
+		 Connection conexao;
+		try {
+			conexao = DriverManager.getConnection(url, "root", "");
+			PreparedStatement stm = conexao.prepareStatement(sql);
+			
+			stm.setInt(1, codEstado);
+			stm.setString(2, nomeEstado);
+			stm.executeUpdate();
+			
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "Falha ao se conectar ao banco!", "Falha", ERROR);
+			e.printStackTrace();
+		}
+		 
+	 }
 
-	
 	
 	
 }

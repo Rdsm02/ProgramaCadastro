@@ -9,6 +9,7 @@ public class MenuLista extends MenuListaStyle{
 	public MenuLista(){
 		
 		menuItemClientes.addActionListener(new BotaoCadastrarCliente());
+		menuItemEstado.addActionListener(new BotaoCadastrarEstado());
 		
 		
 	}
@@ -22,6 +23,19 @@ public class MenuLista extends MenuListaStyle{
 			cli.setVisible(true);
 			
 		}
+		
+	}
+	
+	class BotaoCadastrarEstado implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			JComboBoxEstadosCidades jComboBox = new JComboBoxEstadosCidades();
+			jComboBox.setVisible(true);
+			
+		}
+		
 		
 	}
 	
